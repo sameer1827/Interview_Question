@@ -1,26 +1,29 @@
-#include <iostream>
-using namespace std;
+#include<bits/stdc++.h>
+using namespace std ;
+ bool palindrome(int n)
+ {
+    int rev =0;
+    int temp =n;
+     while(temp!=0)
+     {
+        rev = (rev*10) + (temp%10);
+         temp = temp/10;
+     }
+      return (rev==n);
+ }
 
-bool isPalindrome(int n) {
-    int reversed = 0;
-    int temp = n;
 
-    while (temp != 0) {
-        reversed = (reversed * 10) + (temp % 10);
-        temp = temp / 10;
+int main()
+{
+    int n = 1232;
+    if (palindrome(n))
+    {
+        cout<<"It is a palindrome number"<<endl;
+
     }
-
-    return (reversed == n);
-}
-
-int main() {
-    int n = 212;
-
-    if (isPalindrome(n)) {
-        cout << "It is a palindrome number" << endl;
-    } else {
-        cout << "It is not a palindrome number" << endl;
+    else
+    {
+        cout<<"It is noot a palindromme number"<<endl;
     }
-
     return 0;
 }
